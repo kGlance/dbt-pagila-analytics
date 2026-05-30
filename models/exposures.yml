@@ -1,0 +1,28 @@
+version: 2
+
+exposures:
+  - name: customer_revenue_dashboard
+    type: dashboard
+    maturity: medium
+    owner:
+      name: Ekaterina
+      email: ek@email.com
+    description: >
+      Power BI dashboard showing customer revenue, 
+      rental activity and payment history.
+    depends_on:
+      - ref('mart_customer_revenue')
+      - ref('mart_payments_incremental')
+
+  - name: ai_data_agent
+    type: application
+    maturity: low
+    owner:
+      name: Ekaterina
+      email: ek@email.com
+    description: >
+      AI agent built with LangGraph that allows business users 
+      to query analytics data in plain language.
+    depends_on:
+      - ref('mart_customer_revenue')
+      - ref('mart_payments_incremental')

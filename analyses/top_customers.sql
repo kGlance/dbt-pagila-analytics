@@ -8,7 +8,7 @@ select
     {{ format_currency('total_revenue', '€') }} as total_revenue_formatted,
     total_payments,
     total_rentals,
-    round(total_revenue / nullif(total_rentals, 0), 2) as revenue_per_rental
+    {{ format_currency( 'round(total_revenue / nullif(total_rentals, 0), 2)', '€') }} as revenue_per_rental
 from {{ ref('mart_customer_revenue') }}
 order by total_revenue desc
 limit 10
