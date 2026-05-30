@@ -9,6 +9,7 @@ customers as (
 )
 
 select
+    {{ dbt_utils.generate_surrogate_key(['payment_id', 'customer_id']) }} as surrogate_key,
     p.payment_id,
     p.customer_id,
     c.customer_name,
