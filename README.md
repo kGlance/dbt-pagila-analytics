@@ -38,3 +38,9 @@ models/
 | stg_rentals | staging | view | Cleaned rental data |
 | mart_customer_revenue | marts | table | Revenue and rental count per customer |
 | mart_payments_incremental | marts | incremental | Payment history, loads only new rows |
+
+## Lineage Graph
+
+![Lineage Graph](assets/lineage_graph.png)
+
+Full data lineage from raw sources → staging → marts → exposures (Power BI dashboard, AI agent).
