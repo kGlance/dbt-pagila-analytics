@@ -6,7 +6,7 @@ renamed as (
     select
         customer_id,
         first_name || ' ' || last_name as customer_name,
-        email,
+        {{ clean_string('email') }} as email,
         active::boolean as is_active,
         create_date
     from source
